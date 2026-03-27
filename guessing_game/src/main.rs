@@ -1,5 +1,6 @@
-use std::io; // brang the `io` input/output library into scope from stadard library `std`
 use rand::Rng;
+use std::cmp::Ordering;
+use std::io; // brang the `io` input/output library into scope from stadard library `std`
 
 fn main() {
     println!("Guess The Number!");
@@ -13,5 +14,14 @@ fn main() {
         .read_line(&mut guess)
         .expect("Failed to read line");
 
-    println!("you guessed: {guess}")
+    let guess: u32 = guess.trim().parse().expect("Please type a number");
+
+    println!("you guessed: {guess}");
+
+    // comparing
+    match guess.cmp(&secret_number) {
+        Ordering::Less => println!("Too Small"),
+        Ordering::Greater => println!("Too Big"),
+        Ordering::Equal => println!("Oh Yeah!, It is theeeeeeeeee Correct."),
+    }
 }
