@@ -21,3 +21,11 @@ $ git clone example.org/someproject
 $ cd someproject
 $ cargo build
 ```
+------
+
+# Chapter 2
+
+- By default, Rust has a set of items defined in the standard library that it brings into the
+scope of every program. This set is called the prelude.
+- In Rust, variables are immutable by default, meaning once we give the variable a value, the value won’t change.
+- A crate is a collection of Rust source code files. 
