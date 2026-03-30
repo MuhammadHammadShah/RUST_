@@ -20,6 +20,18 @@ fn main() {
 
     // shadowing
     let spaces = "    ";
+    println!("{spaces}");
     let spaces = spaces.len();
     println!("{spaces}");
+
+    // change value type
+
+    let number: u32 = "45".parse().expect("Not a Number"); // u32 is the type annotation.
+    println!("{number}");
+    
+    // overflow check with -release
+    // let mut numer: u8 = 255;
+    // println!("{numer}");
+    // numer = numer + 2;
+    // println!("{numer}");
 }
