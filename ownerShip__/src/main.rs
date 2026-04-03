@@ -9,7 +9,50 @@ fn main() {
     // use_it();
     // use_it_2();
     // use_it_3();
-    use_mutable_reference();
+    // use_mutable_reference();
+    // slice_full_string();
+    use_it_4();
+}
+
+fn use_it_4() {
+    let ref_s = String::from("home");
+    let word = first_word(&ref_s);
+    println!("word: {word}")
+}
+
+fn first_word(s: &String) -> &str {
+    let byte = s.as_bytes();
+    for (i, &item) in byte.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+    &s[..]
+}
+
+fn slice_full_string() {
+    let s1 = String::from("hello world");
+    let len = s1.len();
+    let full_string_1 = &s1[0..len];
+    println!("full string: {full_string_1}");
+    let full_string_2 = &s1[..];
+    println!("same string: {full_string_2}");
+}
+
+fn bytes_() {
+    let s = String::from("home is beautiful");
+    let s2 = first_word_length(&s);
+    println!("{:?}", s2)
+}
+
+fn first_word_length(s: &String) -> usize {
+    let bytes = s.as_bytes();
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+    s.len()
 }
 
 // cheatsheet: if want to use mutable reference just use scopes ;)
