@@ -52,3 +52,5 @@ The reason is that types such as integers that have a known size at compile time
 entirely on the stack, so copies of the actual values are quick to make.
 
 """
+
+- Creating a reference `&s` is  called `Borrowing`

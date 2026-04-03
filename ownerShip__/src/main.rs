@@ -6,7 +6,47 @@ fn main() {
     // func_3();
     // func_4();
     // now_try_it_for_string();
+    // use_it();
+    use_it_2();
 }
+
+
+//
+// References => references are also used to  point to a value unlike a pointer which completely changes the ownership when an other variable points to a same value.
+fn use_it_2() {
+    let s1 = String::from("Hello hi");
+    println!("s1 value: {s1}");
+    let (s2, len) = reference_func(&s1);
+    println!("s1 value still after giving it to s2: {s1}");
+    println!("s2 value: {s2}");
+    println!(
+        "length value of s1: {len} because the reference function give the length of referenced variable."
+    );
+}
+
+fn reference_func(s: &String) -> (&String, usize) {
+    let len = s.len();
+    (s, len)
+}
+//
+
+// fn return multiple values
+
+fn use_it() {
+    let s1 = String::from("hello hi");
+    let (s2, length_of_string) = return_multiple_values(s1);
+    println!(
+        "the string is: '{}' \n and length is: {}",
+        s2, length_of_string
+    )
+}
+
+fn return_multiple_values(s: String) -> (String, usize) {
+    let length = s.len();
+    (s, length)
+}
+
+//
 
 //
 
