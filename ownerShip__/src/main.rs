@@ -7,9 +7,24 @@ fn main() {
     // func_4();
     // now_try_it_for_string();
     // use_it();
-    use_it_2();
+    // use_it_2();
+    use_it_3();
 }
 
+//
+
+fn use_it_3() {
+    let mut s1 = String::from("Hello");
+    println!("s1 value before: {s1}");
+    mutuable_ref(&mut s1);
+    println!("s1 value: {s1}")
+}
+
+fn mutuable_ref(s: &mut String) {
+    s.push_str(", World");
+}
+
+//
 
 //
 // References => references are also used to  point to a value unlike a pointer which completely changes the ownership when an other variable points to a same value.
