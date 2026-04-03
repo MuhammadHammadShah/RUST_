@@ -29,3 +29,26 @@ $ cargo build
 scope of every program. This set is called the prelude.
 - In Rust, variables are immutable by default, meaning once we give the variable a value, the value won’t change.
 - A crate is a collection of Rust source code files. 
+
+# chapter 3 
+
+``` In languages with a garbage collector (GC), the GC
+keeps track of and cleans up memory that isn’t being used anymore, and we don’t need to
+think about it. In most languages without a GC, it’s our responsibility to identify when
+memory is no longer being used and to call code to explicitly free it, just as we did to request
+it. Doing this correctly has historically been a difficult programming problem. If we forget,
+we’ll waste memory. If we do it too early, we’ll have an invalid variable. If we do it twice,
+that’s a bug too. We need to pair exactly one allocate with exactly one free. ```
+
+
+
+
+```When we assign s1 to s2 , the String data is copied, meaning we copy the pointer, the
+length, and the capacity that are on the stack. We do not copy the data on the heap that the
+pointer refers to.```
+
+"""
+The reason is that types such as integers that have a known size at compile time are stored
+entirely on the stack, so copies of the actual values are quick to make.
+
+"""
