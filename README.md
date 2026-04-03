@@ -54,3 +54,13 @@ entirely on the stack, so copies of the actual values are quick to make.
 """
 
 - Creating a reference `&s` is  called `Borrowing`
+
+- Mutable references have one big restriction: if you have a mutable reference to a value, you can have no other references to that value. 
+- We also cannot have a mutable reference while we have an immutable one to the same value.
+```
+let mut s = String::from("hello");
+let r1 = &s; // no problem
+let r2 = &s; // no problem
+let r3 = &mut s; // BIG PROBLEM
+println!("{}, {}, and {}", r1, r2, r3);
+```

@@ -8,8 +8,26 @@ fn main() {
     // now_try_it_for_string();
     // use_it();
     // use_it_2();
-    use_it_3();
+    // use_it_3();
+    use_mutable_reference();
 }
+
+// cheatsheet: if want to use mutable reference just use scopes ;)
+
+fn use_mutable_reference() {
+    let mut s1 = String::from("Home ");
+    println!("s1: {s1}");
+    {
+        let r1 = &mut s1;
+        r1.push_str("is mine ");
+        println!("r1: {r1}")
+    }
+    let r2 = &mut s1;
+    r2.push_str("and beautiful ");
+    println!("r2: {r2}")
+}
+
+//
 
 //
 
